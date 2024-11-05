@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/music-genre-react-app/static/css/main.80de82fe.css",
-    "main.js": "/music-genre-react-app/static/js/main.4431e8c7.js",
-    "static/js/453.80c997d3.chunk.js": "/music-genre-react-app/static/js/453.80c997d3.chunk.js",
-    "index.html": "/music-genre-react-app/index.html",
-    "main.80de82fe.css.map": "/music-genre-react-app/static/css/main.80de82fe.css.map",
-    "main.4431e8c7.js.map": "/music-genre-react-app/static/js/main.4431e8c7.js.map",
-    "453.80c997d3.chunk.js.map": "/music-genre-react-app/static/js/453.80c997d3.chunk.js.map"
+    "main.css": "/music-genre-react/static/css/main.80de82fe.css",
+    "main.js": "/music-genre-react/static/js/main.fc83844d.js",
+    "static/js/453.80c997d3.chunk.js": "/music-genre-react/static/js/453.80c997d3.chunk.js",
+    "index.html": "/music-genre-react/index.html",
+    "main.80de82fe.css.map": "/music-genre-react/static/css/main.80de82fe.css.map",
+    "main.fc83844d.js.map": "/music-genre-react/static/js/main.fc83844d.js.map",
+    "453.80c997d3.chunk.js.map": "/music-genre-react/static/js/453.80c997d3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.80de82fe.css",
-    "static/js/main.4431e8c7.js"
+    "static/js/main.fc83844d.js"
   ]
 }
