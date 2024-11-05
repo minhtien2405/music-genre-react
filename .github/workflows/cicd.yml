@@ -8,28 +8,27 @@ permissions:
   contents: read  
   pages: write      
   id-token: write   
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Setup Node.js
-      
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-    - name: Install dependencies
-      run: npm install
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    - name: Build
-      run: npm run build
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Updated to a more recent version for compatibility
 
-    - name: Deploy
+      - name: Install dependencies
+        run: npm ci  # `npm ci` is faster and more reliable for CI/CD than `npm install`
 
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build
+      - name: Build
+        run: npm run build
 
-        
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
