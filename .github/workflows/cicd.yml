@@ -5,10 +5,10 @@ on:
     branches: [ main ]
 
 permissions:
-    actions: write
-    contents: read
-    id-token: write
-    pages: write
+  actions: write
+  contents: read
+  id-token: write
+  pages: write
 
 jobs:
   build-and-deploy:
@@ -27,6 +27,12 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-pages
+          path: ./build  # Make sure this matches the output directory of your build
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
