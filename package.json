@@ -2,7 +2,7 @@
   "name": "music-genre-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://minhtien2405.github.io/music-genre-react",
+  "homepage": "https://minhtien2405.github.io/music-genre-react-app/",
   "dependencies": {
     "@tensorflow/tfjs": "^4.22.0",
     "@testing-library/jest-dom": "^5.17.0",
