@@ -1,44 +1,31 @@
-name: Deploy to GitHub Pages
+name: Deploy React App
 
-on: 
+on:
   push:
-    branches: [ main ]
-
-permissions:
-  actions: write
-  contents: read
-  id-token: write
-  pages: write
+    branches:
+      - main
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
 
-      - name: Setup Node.js
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '16'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-      - name: Build
+      - name: Build React app
         run: npm run build
 
-      - name: List build output directory contents
-        run: ls -R ./build  # Replace with your actual build output directory
-
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: github-pages
-          path: ./build  # Ensure this matches your build output path
-
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          artifact_name: 'github-pages'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
