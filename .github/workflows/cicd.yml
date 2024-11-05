@@ -16,11 +16,11 @@ jobs:
     - name: Build
       run: |
         npm install
-        npm run-script build
+        npm run build  # corrected from npm run-script build to npm run build
     - name: Build and Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BASE_BRANCH: master
+        BASE_BRANCH: main  # changed from master to main
         BRANCH: gh-pages
         FOLDER: build
