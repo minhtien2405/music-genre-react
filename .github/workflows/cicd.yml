@@ -18,7 +18,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Updated to a more recent version for compatibility
+          node-version: '20'  # Updated to a more recent version for compatibility
 
       - name: Install dependencies
         run: npm ci  # `npm ci` is faster and more reliable for CI/CD than `npm install`
@@ -26,8 +26,8 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy
-        uses:  actions/checkout@v2
-        with:
-          lfs: true
-          token: ${{ secrets.ACCESS_TOKEN }}
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        with: 
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifact_name: 'github-pages'
