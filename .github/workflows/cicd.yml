@@ -28,6 +28,9 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Clean build directory
+        run: rm -rf ./build/*  # Adjust path if needed to clean the build directory
+
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
