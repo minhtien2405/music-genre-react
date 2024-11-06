@@ -33,7 +33,7 @@ function App() {
     formData.append('file', audioFile);
 
     try {
-      const response = await axios.post(`http://localhost:8000/predict/?model_name=${selectedModel}`, formData, {
+      const response = await axios.post(`http://localhost:8000/get_music_genre/predict/?model_name=${selectedModel}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
